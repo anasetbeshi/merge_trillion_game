@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>دمج التريليون 🔥🔴</title>
+  <style>
+    body {
+      background: radial-gradient(circle at center, #1a1a1a, #000);
+      color: #fff;
+      font-family: 'Tahoma', sans-serif;
+      text-align: center;
+      overflow: hidden;
+    }
+    .hud {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+    }
+    .panel {
+      background: rgba(40, 40, 40, 0.8);
+      padding: 10px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ff4500;
+    }
+    .health-bar {
+      height: 20px;
+      background: linear-gradient(to right, #ff0000, #ff6600);
+      border: 2px solid #fff;
+      border-radius: 5px;
+      margin: 5px 0;
+    }
+    .coins {
+      font-size: 22px;
+      color: gold;
+      font-weight: bold;
+    }
+    .controls {
+      margin-top: 30px;
+    }
+    .key {
+      display: inline-block;
+      background: #333;
+      color: #fff;
+      padding: 10px 15px;
+      margin: 5px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px #ff4500;
+    }
+    .shoot-effect {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,0,0,0.7), transparent);
+      display: none;
+      animation: shoot 0.3s ease-out;
+    }
+    @keyframes shoot {
+      from { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+      to { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hud">
+    <div class="panel">
+      <h3>فريقك</h3>
+      <div class="health-bar" style="width:120px;"></div>
+      <div class="health-bar" style="width:110px;"></div>
+      <div class="health-bar" style="width:100px;"></div>
+    </div>
+
+    <div class="panel">
+      <h3>المستوى 20</h3>
+      <div class="coins">💰 1,350</div>
+    </div>
+
+    <div class="panel">
+      <h3>الأعداء</h3>
+      <div class="health-bar" style="width:90px;"></div>
+      <div class="health-bar" style="width:80px;"></div>
+      <div class="health-bar" style="width:70px;"></div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <div class="key">W</div>
+    <div class="key">A</div>
+    <div class="key">S</div>
+    <div class="key">D</div>
+  </div>
+
+  <div class="shoot-effect" id="shootEffect"></div>
+
+  <script>
+    // 🔫 إطلاق النار بالماوس مع تأثير بصري وصوتي
+    document.body.addEventListener("click", () => {
+      const effect = document.getElementById("shootEffect");
+      effect.style.display = "block";
+      setTimeout(() => effect.style.display = "none", 300);
+
+      const sound = new Audio("gunshot.mp3"); // ضع ملف صوت هنا
+      sound.play();
+    });
+
+    // 🎮 حركة اللاعب عبر لوحة المفاتيح
+    document.addEventListener("keydown", (e) => {
+      switch(e.key.toLowerCase()) {
+        case 'w': console.log("تحرك للأمام"); break;
+        case 's': console.log("تراجع للخلف"); break;
+        case 'a': console.log("تحرك يسارًا"); break;
+        case 'd': console.log("تحرك يمينًا"); break;
+      }
+    });
+  </script>
+
+</body>
+</html>

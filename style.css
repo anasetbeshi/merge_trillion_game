@@ -1,0 +1,90 @@
+/* 🎨 إعدادات عامة */
+body {
+  background: radial-gradient(circle at center, #1a1a1a, #000);
+  color: #fff;
+  font-family: 'Tahoma', sans-serif;
+  text-align: center;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🖥️ واجهة HUD */
+.hud {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.panel {
+  background: rgba(40, 40, 40, 0.85);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px #ff4500;
+  min-width: 200px;
+}
+
+.panel h3 {
+  margin: 0 0 10px 0;
+  color: #ffcc00;
+  font-size: 18px;
+}
+
+/* ❤️ شريط الصحة */
+.health-bar {
+  height: 20px;
+  background: linear-gradient(to right, #ff0000, #ff6600);
+  border: 2px solid #fff;
+  border-radius: 5px;
+  margin: 5px 0;
+  transition: width 0.3s ease-in-out;
+}
+
+/* 💰 العملات */
+.coins {
+  font-size: 22px;
+  color: gold;
+  font-weight: bold;
+  text-shadow: 0 0 5px #fff;
+}
+
+/* 🎮 أزرار التحكم */
+.controls {
+  margin-top: 30px;
+}
+
+.key {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  padding: 12px 18px;
+  margin: 5px;
+  border-radius: 6px;
+  box-shadow: 0 0 8px #ff4500;
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+
+.key:hover {
+  transform: scale(1.1);
+  background: #ff4500;
+}
+
+/* 🔫 تأثير إطلاق النار */
+.shoot-effect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,0,0,0.7), transparent);
+  display: none;
+  animation: shoot 0.3s ease-out;
+}
+
+@keyframes shoot {
+  from { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+  to { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+}
